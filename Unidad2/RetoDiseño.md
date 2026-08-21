@@ -652,8 +652,10 @@ La selección final se realizó a partir de la comparación entre los comportami
 # Muestra Proyecto
 [ParticleOfLife_RechazoCercania v0.0.5](https://editor.p5js.org/Alex1320/full/4kt0XAlye)
 <!-- video0.0.5-->
+
 [ParticleOfLife_RechazoCercania v0.1.5](https://editor.p5js.org/Alex1320/full/fsO6pk08y)
 <!-- video0.1.5-->
+
 [ParticleOfLife_RechazoCercania v0.2.5](https://editor.p5js.org/Alex1320/full/17JkeIY2n)
 <!-- video0.2.5-->
 
@@ -664,14 +666,14 @@ Considero que el proyecto cumple de manera satisfactoria con la mayoría de los 
 
 |   Criterio	|   Peso	|   Valoración	|   Aporte
 |---|---:|---:|---:|
-|**La intención es clara y perceptible en el comportamiento.**	   |    20%|	85%	|   17.00
-|**Los tipos, cantidades, matriz y parámetros están justificados desde la intención.**	|25%	|80%	|20.00
-|**Comprendo y puedo modificar el funcionamiento técnico del sistema.**	    |20%|70%	|14.00
+|**La intención es clara y perceptible en el comportamiento.**	   |    20%|	90%	|   18.00
+|**Los tipos, cantidades, matriz y parámetros están justificados desde la intención.**	|25%	|90%	|22.5
+|**Comprendo y puedo modificar el funcionamiento técnico del sistema.**	    |20%|80%	|16.00
 |**El sistema produce variaciones con una identidad reconocible.**	|15%	|85%	|12.75
-|**Experimenté, comparé, seleccioné y descarté con criterios claros.**	|10%	|80%	|8.00
-|**Puedo distinguir y sustentar lo diseñado y lo emergente.**	|10%	|75%	|7.50
+|**Experimenté, comparé, seleccioné y descarté con criterios claros.**	|10%	|90%	|9.00
+|**Puedo distinguir y sustentar lo diseñado y lo emergente.**	|10%	|85%	|8.50
 ---
 Total 79.25 
 
 
-    Nota propuesta: 79.25 ÷ 20 = 3.96
+    Nota propuesta: 86.75 ÷ 20 = 4.33

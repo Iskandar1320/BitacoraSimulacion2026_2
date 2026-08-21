@@ -31,3 +31,6 @@ Se utilizó IA generativa como apoyo para estructurar el primer prototipo en p5.
 <!-- Video/Gif (OJALA) -->
 [Incetidumbre_V0.0.5](https://editor.p5js.org/Alex1320/full/56NZ6E_Ub)
 
+## Video Proyecto
+
+<video src="Videos/prototipo.mp4" controls width="360"></video>
