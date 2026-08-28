@@ -27,10 +27,19 @@ Una dificultad inicial fue lograr que la interacción no se sintiera como contro
 
 Se utilizó IA generativa como apoyo para estructurar el primer prototipo en p5.js, proponer una traducción visual de los conceptos del reto y organizar la explicación para la bitácora. Posteriormente, el código fue revisado y ajustado para mantener una sola pieza coherente.
 
-### Muestra Proyecto
+## Muestra Proyecto
 <!-- Video/Gif (OJALA) -->
 [Incetidumbre_V0.0.5](https://editor.p5js.org/Alex1320/full/56NZ6E_Ub)
 
 ## Video Proyecto
-
 <video src="Videos/Fuerzas_01.mp4" controls width="360"></video>
+
+## AutoEvaluación
+
+|   Criterio	|   Cumplo	|   No cumplo	|   Evidencia
+|---|---:|---:|---:|
+|**Encargo completo: interpreto los cinco momentos dentro de un mismo sistema visual.**	   |    Si|	🔳	|   [Evidencias](Evidencias.md)
+|**Simulación con intención: utilizo al menos tres conceptos de la unidad para comunicar las ideas del encargo.**	|Si	|🔳	| [Evidencias](Evidencias.md)
+|**Interacción significativa: la interacción modifica el comportamiento o las probabilidades del sistema, que también funciona sin intervención.**	    |Si|🔳	|[Evidencias](Evidencias.md)
+|**Prototipo funcional: la experiencia puede ejecutarse y recorrerse completa sin errores que impidan comprenderla.**	|Si	|🔳	|[Evidencias](Evidencias.md)
+|**Proceso documentado: la bitácora evidencia avances, decisiones, dificultades, soluciones, uso de IA y enlace al prototipo.**	|Si	|🔳	| [Evidencias](Evidencias.md)

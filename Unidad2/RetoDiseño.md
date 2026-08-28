@@ -661,7 +661,7 @@ La selección final se realizó a partir de la comparación entre los comportami
 
 # Autoevaluación 
 
-Considero que el proyecto cumple de manera satisfactoria con la mayoría de los criterios propuestos. Sin embargo, también reconozco que utilicé inteligencia artificial de forma importante durante la programación y documentación del sistema. Aunque participé en la selección de las propuestas, comparación de los prototipos y elección de la versión final, considero que podría haber tenido una participación más activa desde las primeras decisiones conceptuales y técnicas.
+Considero que el proyecto cumple de manera satisfactoria con la mayoría de los criterios propuestos. Sin embargo, también reconozco que utilicé inteligencia artificial de forma importante durante la programación y documentación del sistema. Aunque participé en la creación de las propuestas, comparación de los prototipos y elección de la versión final, considero que podría haber tenido una participación más activa desde las decisiones y técnicas.
 
 
 |   Criterio	|   Peso	|   Valoración	|   Aporte
