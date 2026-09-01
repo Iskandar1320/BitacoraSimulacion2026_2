@@ -36,6 +36,8 @@ Se utilizó IA generativa como apoyo para estructurar el primer prototipo en p5.
 
 
 
+https://github.com/user-attachments/assets/47b2abfe-a9cc-4ec9-992d-6e02fc7d57fb
+
 https://github.com/user-attachments/assets/4f3a732d-57c4-49b5-a450-6b19f86032ee
 
 https://github.com/user-attachments/assets/df4ae373-553c-4c91-ab4d-5f5a17170d50
