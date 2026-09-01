@@ -34,7 +34,18 @@ Se utilizó IA generativa como apoyo para estructurar el primer prototipo en p5.
 ## Video Proyecto
 <video src="Videos/Fuerzas_01.mp4" controls width="360"></video>
 
-https://github.com/user-attachments/assets/c3480473-626e-4ca8-99fa-2e1b7ac32df0
+
+
+https://github.com/user-attachments/assets/4f3a732d-57c4-49b5-a450-6b19f86032ee
+
+https://github.com/user-attachments/assets/df4ae373-553c-4c91-ab4d-5f5a17170d50
+
+
+
+
+
+
+
 
 
 
