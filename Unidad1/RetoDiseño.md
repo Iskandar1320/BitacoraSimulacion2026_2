@@ -34,6 +34,10 @@ Se utilizó IA generativa como apoyo para estructurar el primer prototipo en p5.
 ## Video Proyecto
 <video src="Videos/Fuerzas_01.mp4" controls width="360"></video>
 
+https://github.com/user-attachments/assets/c3480473-626e-4ca8-99fa-2e1b7ac32df0
+
+
+
 ## AutoEvaluación
 
 |   Criterio	|   Cumplo	|   No cumplo	|   Evidencia
