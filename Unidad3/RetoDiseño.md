@@ -254,14 +254,14 @@ La lista y el formato sugerido están en [Evidencias.md](./Evidencias.md).
 
 ---
 
-## Matriz de revisión según la rúbrica de la unidad
+## Matriz de Autoevaluación según la rúbrica de la unidad
 
-| Criterio | Peso | Evidencia preparada | Estado antes del push |
-|---|---:|---|---|
-| **Trazabilidad y comprensión del sistema** | 25 | mapa de estado, fuerzas, integración, render, controles y cambios asistidos por IA | documentado |
-| **Verificación del algoritmo de fuerzas** | 25 | cinco presets aislados + comparación explícita atracción/repulsión | ready; |
-| **Diseño de fuerzas e intención** | 20 | fuerza de contornos con ecuación propia y relación con el concepto | implementado |
-| **Instrumento, score e interpretación** | 15 | cuatro momentos, puntero y avalancha; audio no automatiza el sistema | implementado |
-| **Experimentación y criterio frente a la IA** | 10 | alternativas descartadas, decisiones conservadas y lista de cambios hechos con IA | documentado |
-| **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | ready |
+| Criterio | Peso | Evidencia preparada | Estado antes del push | nota |
+|---|---:|---|---| ---|
+| **Trazabilidad y comprensión del sistema** | 25 | mapa de estado, fuerzas, integración, render, controles y cambios asistidos por IA | documentado | 25 |
+| **Verificación del algoritmo de fuerzas** | 25 | cinco presets aislados + comparación explícita atracción/repulsión | ready; | 20 |
+| **Diseño de fuerzas e intención** | 20 | fuerza de contornos con ecuación propia y relación con el concepto | implementado | 15 |
+| **Instrumento, score e interpretación** | 15 | cuatro momentos, puntero y avalancha; audio no automatiza el sistema | implementado | 15 |
+| **Experimentación y criterio frente a la IA** | 10 | alternativas descartadas, decisiones conservadas y lista de cambios hechos con IA | documentado | 6 |
+| **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | ready | 5 |
 
