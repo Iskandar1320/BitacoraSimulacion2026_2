@@ -230,14 +230,12 @@ El repositorio usa GitHub Actions. El workflow está en:
 
 Al hacer `push` a `main`, GitHub instala las dependencias, ejecuta `npm run build` y publica el contenido de `dist/` mediante GitHub Pages.
 
-**URL esperada del repositorio:**
+**URL del repositorio:**
 `https://iskandar1320.github.io/BitacoraSimulacion2026_2/`
-
-> Esta URL debe verificarse después del push y de habilitar **Settings → Pages → GitHub Actions**. No se marca como evidencia final hasta comprobar que abre correctamente.
 
 ---
 
-## Evidencias que faltan capturar al ejecutar
+## Evidencias 
 
 Para cerrar completamente la entrega deben añadirse evidencias visuales reales de ejecución:
 
@@ -250,7 +248,7 @@ Para cerrar completamente la entrega deben añadirse evidencias visuales reales 
 7. PERFORMANCE — avalancha con `Espacio`.
 8. URL pública abierta después del despliegue.
 
-La lista y el formato sugerido están en [Evidencias.md](./Evidencias.md).
+La lista y el formato están en [Evidencias.md](./Evidencias.md).
 
 ---
 
@@ -266,5 +264,4 @@ La lista y el formato sugerido están en [Evidencias.md](./Evidencias.md).
 | **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | ready | 5 |
 
     nota: 86/100 -> de 0 a 5--> 4.3/5
-    1
 
