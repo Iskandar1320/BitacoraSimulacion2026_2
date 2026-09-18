@@ -68,7 +68,7 @@ export function createLabPanel({ params, onReset, onPreset, onModeChange, onPaus
   panel.className = 'panel';
   panel.innerHTML = `
     <h1>U3 · Forces Instrument</h1>
-    <p>LAB: aísla fuerzas, predice y prueba. <strong>P</strong> cambia a PERFORMANCE.</p>
+    <p>LAB: aísla fuerzas, formula una predicción y luego prueba. <strong>P</strong> cambia a PERFORMANCE.</p>
   `;
 
   const sim = document.createElement('div');
@@ -82,6 +82,8 @@ export function createLabPanel({ params, onReset, onPreset, onModeChange, onPaus
     particleSize: params.particleSize.value,
     radialStrength: params.radialStrength.value,
     vortexStrength: params.vortexStrength.value,
+    contourStrength: params.contourStrength.value,
+    contourFrequency: params.contourFrequency.value,
     dragCoefficient: params.dragCoefficient.value,
     windX: params.wind.value.x,
     windY: params.wind.value.y
@@ -100,6 +102,9 @@ export function createLabPanel({ params, onReset, onPreset, onModeChange, onPaus
   refreshers.push(rangeRow(force, 'radialStrength', state, 'radialStrength', -8, 8, 0.05, (v) => params.radialStrength.value = v, () => params.radialStrength.value));
   refreshers.push(checkRow(force, 'Vórtice', params.vortexEnabled.value > 0, (v) => params.vortexEnabled.value = v ? 1 : 0, () => params.vortexEnabled.value > 0));
   refreshers.push(rangeRow(force, 'vortexStrength', state, 'vortexStrength', -8, 8, 0.05, (v) => params.vortexStrength.value = v, () => params.vortexStrength.value));
+  refreshers.push(checkRow(force, 'Contornos', params.contourEnabled.value > 0, (v) => params.contourEnabled.value = v ? 1 : 0, () => params.contourEnabled.value > 0));
+  refreshers.push(rangeRow(force, 'contourStrength', state, 'contourStrength', -5, 5, 0.05, (v) => params.contourStrength.value = v, () => params.contourStrength.value));
+  refreshers.push(rangeRow(force, 'contourFrequency', state, 'contourFrequency', 0.5, 6, 0.05, (v) => params.contourFrequency.value = v, () => params.contourFrequency.value));
   refreshers.push(checkRow(force, 'Drag', params.dragEnabled.value > 0, (v) => params.dragEnabled.value = v ? 1 : 0, () => params.dragEnabled.value > 0));
   refreshers.push(rangeRow(force, 'dragCoefficient', state, 'dragCoefficient', 0, 1, 0.01, (v) => params.dragCoefficient.value = v, () => params.dragCoefficient.value));
   refreshers.push(checkRow(force, 'Viento', params.windEnabled.value > 0, (v) => params.windEnabled.value = v ? 1 : 0, () => params.windEnabled.value > 0));

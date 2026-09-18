@@ -1,36 +1,37 @@
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #f2f2f2;
-  background: #050607;
+  color: #f2f7f9;
+  background: #03090e;
 }
 
 * { box-sizing: border-box; }
 html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; }
-body { background: #050607; }
+body { background: #03090e; }
 canvas { display: block; width: 100%; height: 100%; }
+button, input { font: inherit; }
 
 .panel {
   position: fixed;
   top: 14px;
   left: 14px;
-  width: min(340px, calc(100vw - 28px));
+  width: min(350px, calc(100vw - 28px));
   max-height: calc(100vh - 28px);
   overflow: auto;
   padding: 14px;
   border: 1px solid rgba(255,255,255,.16);
   border-radius: 12px;
-  background: rgba(8, 10, 12, .86);
+  background: rgba(8, 13, 17, .88);
   backdrop-filter: blur(12px);
   z-index: 10;
 }
 
 .panel h1 { font-size: 16px; margin: 0 0 4px; }
 .panel h2 { font-size: 12px; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: .08em; opacity: .72; }
-.panel p, .panel li { font-size: 12px; line-height: 1.4; color: #c9cdd2; }
+.panel p, .panel li { font-size: 12px; line-height: 1.4; color: #c9d5da; }
 .panel .row { margin: 8px 0; }
 .panel label { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
-.panel input[type="range"] { width: 100%; }
-.panel input[type="checkbox"] { transform: translateY(1px); }
+.panel input[type="range"] { width: 100%; accent-color: #7edff2; }
+.panel input[type="checkbox"] { transform: translateY(1px); accent-color: #7edff2; }
 .panel button, .panel select {
   width: 100%;
   margin-top: 6px;
@@ -39,11 +40,12 @@ canvas { display: block; width: 100%; height: 100%; }
   border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.08);
   color: inherit;
+  cursor: pointer;
 }
-.panel button:hover { background: rgba(255,255,255,.14); }
+.panel button:hover { background: rgba(126,223,242,.12); }
 .panel .value { font-variant-numeric: tabular-nums; opacity: .85; }
 .panel .group { padding-top: 4px; border-top: 1px solid rgba(255,255,255,.08); }
-.panel.hidden { display: none; }
+.panel.hidden, .performance-hud.hidden { display: none; }
 
 .hud {
   position: fixed;
@@ -54,8 +56,105 @@ canvas { display: block; width: 100%; height: 100%; }
   border-radius: 9px;
   background: rgba(8,10,12,.7);
   font-size: 11px;
-  color: #d8dce0;
+  color: #d8e3e8;
   line-height: 1.45;
   pointer-events: none;
 }
+.hud:empty { display: none; }
 .hud strong { color: white; }
+
+.performance-hud {
+  position: fixed;
+  inset: auto 22px 22px 22px;
+  z-index: 12;
+  pointer-events: none;
+  display: grid;
+  gap: 9px;
+}
+
+.performance-kicker {
+  font-size: 10px;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: rgba(184, 243, 255, .72);
+}
+
+.performance-hud h1 {
+  margin: 0;
+  max-width: 520px;
+  font-size: clamp(24px, 4vw, 48px);
+  line-height: .98;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+
+.performance-copy {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(230, 245, 249, .67);
+}
+
+.score-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  pointer-events: auto;
+}
+
+.score-row button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 118px;
+  padding: 9px 12px;
+  border: 1px solid rgba(184, 243, 255, .18);
+  border-radius: 999px;
+  color: rgba(235, 250, 253, .74);
+  background: rgba(4, 14, 20, .56);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.score-row button span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(184, 243, 255, .10);
+  font-size: 10px;
+}
+
+.score-row button:hover,
+.score-row button.active {
+  border-color: rgba(184, 243, 255, .55);
+  background: rgba(76, 158, 184, .20);
+  color: #f5fdff;
+}
+
+.performance-controls {
+  display: flex;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: rgba(221, 240, 245, .58);
+}
+
+.performance-controls kbd {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 5px;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.85);
+  font-size: 9px;
+}
+
+@media (max-width: 640px) {
+  .performance-hud { inset: auto 12px 12px 12px; }
+  .score-row button { min-width: 0; flex: 1 1 45%; }
+  .performance-copy { max-width: 92vw; }
+}

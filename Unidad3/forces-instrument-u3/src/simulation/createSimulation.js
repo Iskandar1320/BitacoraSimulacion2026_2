@@ -9,6 +9,7 @@ import {
   max,
   mix,
   mod,
+  sin,
   step,
   uint,
   uv,
@@ -36,13 +37,17 @@ export function createSimulation({ renderer, scene, params, count = 131072 }) {
     const r5 = hash(i.add(uint(71)));
     const r6 = hash(i.add(uint(89)));
 
-    p.assign(vec3(r1, r2, r3).sub(0.5).mul(params.boundsSize.mul(0.45)));
+    const span = params.boundsSize.mul(0.9);
+    const x = r1.sub(0.5).mul(span);
+    const y = r2.sub(0.5).mul(span);
+    const z = r3.sub(0.5).mul(params.initialDepth);
+
+    p.assign(vec3(x, y, z));
     v.assign(vec3(r4, r5, r6).sub(0.5).mul(params.initialSpeed));
   })().compute(count).setName('Initialize Particles');
 
   // UPDATE / COMPUTE SHADER ----------------------------------------------
-  // This is the conceptual heart of the project:
-  // state -> forces -> acceleration -> velocity -> position.
+  // Conceptual heart: state -> forces -> acceleration -> velocity -> position.
   const updateParticles = Fn(() => {
     const p = positionBuffer.element(instanceIndex);
     const v = velocityBuffer.element(instanceIndex);
@@ -53,10 +58,12 @@ export function createSimulation({ renderer, scene, params, count = 131072 }) {
     // 1) CONSTANT / WIND FORCE
     force.addAssign(params.wind.mul(params.windEnabled));
 
-    // 2) RADIAL FORCE (positive = attraction, negative = repulsion)
+    // Shared radial data used by attraction, vortex and contour force.
     const toAttractor = params.attractor.sub(p);
     const distance = max(toAttractor.length(), params.softening);
     const radialDirection = toAttractor.div(distance);
+
+    // 2) RADIAL FORCE (positive = attraction, negative = repulsion)
     const radialForce = radialDirection
       .mul(params.radialStrength)
       .div(distance.pow(2))
@@ -68,7 +75,18 @@ export function createSimulation({ renderer, scene, params, count = 131072 }) {
     const tangent = zAxis.cross(radialDirection);
     force.addAssign(tangent.mul(params.vortexStrength).mul(params.vortexEnabled));
 
-    // 4) LINEAR DRAG: F = -c v
+    // 4) TOPOGRAPHIC CONTOUR FORCE (proposal-specific)
+    // sin(distance * frequency) changes sign in concentric bands. Some bands
+    // push toward the summit and the next ones push away, producing a readable
+    // field of "contour currents" instead of a pre-authored trajectory.
+    const contourWave = sin(distance.mul(params.contourFrequency));
+    const contourForce = radialDirection
+      .mul(contourWave)
+      .mul(params.contourStrength)
+      .mul(params.contourEnabled);
+    force.addAssign(contourForce);
+
+    // 5) LINEAR DRAG: F = -c v
     force.addAssign(v.mul(params.dragCoefficient).mul(params.dragEnabled).mul(-1.0));
 
     // INTEGRATION ---------------------------------------------------------
@@ -88,7 +106,7 @@ export function createSimulation({ renderer, scene, params, count = 131072 }) {
   })().compute(count).setName('Update Particles');
 
   // RENDER ---------------------------------------------------------------
-  // Rendering does not recompute the physics. It consumes the GPU state.
+  // Rendering consumes the GPU state; it does not recompute the physics.
   const material = new THREE.SpriteNodeMaterial({
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -101,8 +119,8 @@ export function createSimulation({ renderer, scene, params, count = 131072 }) {
   material.colorNode = Fn(() => {
     const speed = velocityBuffer.toAttribute().length();
     const t = speed.div(params.maxSpeed).clamp(0.0, 1.0);
-    const slow = color('#46a6ff');
-    const fast = color('#ffb35a');
+    const slow = color('#2d7da5');
+    const fast = color('#e9fbff');
     return vec4(mix(slow, fast, t), 1.0);
   })();
 

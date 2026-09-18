@@ -1,41 +1,14 @@
-# U3 · Forces Instrument
+# U3 · Corrientes topográficas — Forces Instrument
 
-[App desplegada](https://juanferfranco.github.io/forces-instrument-u3/)
+Instrumento de partículas desarrollado para la Unidad 3 de **Simulación de sistemas físicos interactivos** a partir del caso de estudio `forces-instrument-u3`.
 
-
-Proyecto base que servirá como caso de estudio. Nos permitirá abordar los conceptos 
-necesarios para comprender el código generado por la IA al momente 
-de materializar las ideas.
-
+La propuesta interpreta **LesAlpx** mediante un campo de partículas conducido manualmente. El puntero funciona como una cumbre móvil y el movimiento emerge de fuerzas de atracción/repulsión, vórtice, viento, drag y una fuerza propia de contornos topográficos.
 
 ## Requisitos
 
-- Node.js 22 recomendado (Vite 8 requiere Node 20.19+ o 22.12+).
-- Navegador con WebGPU habilitado; usa una versión actual de Chrome, Edge o un navegador con soporte equivalente.
-- Git necesario para clonar el repositorio y trabajar localmente.
-
-## Clonar y poner en funcionamiento
-
-Clona el repositorio y entra en la carpeta del proyecto:
-
-```bash
-git clone https://github.com/juanferfranco/forces-instrument-u3.git
-cd forces-instrument-u3
-```
-
-Instala las dependencias:
-
-```bash
-npm install
-```
-
-Inicia el servidor de desarrollo:
-
-```bash
-npm run dev
-```
-
-Abre en el navegador la URL local que muestra Vite. Se necesita un navegador con WebGPU habilitado.
+- Node.js 22 recomendado.
+- Navegador actual con WebGPU, preferiblemente Chrome o Edge.
+- Git para trabajar con el repositorio.
 
 ## Ejecutar
 
@@ -44,47 +17,82 @@ npm install
 npm run dev
 ```
 
-Abre la URL que imprime Vite.
-
-## Build de producción
+## Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-`preview` sirve el contenido construido en `dist/`; úsalo antes de publicar.
+## Modos
 
-## Controles
+### LAB
 
-- `P`: LAB / PERFORMANCE.
-- `R`: reset.
-- `1..5`: escenarios de exploración.
-- puntero: mueve el atractor sobre el plano Z=0.
-- espacio (PERFORMANCE): invierte temporalmente el signo de la fuerza radial.
+Sirve para aislar fuerzas y verificar predicciones.
 
-## Publicar en GitHub Pages
+- `1` Inercia
+- `2` Fuerza constante +X
+- `3` Atracción
+- `4` Repulsión
+- `5` Vórtice
+- `R` Reset
+- `P` Cambiar a PERFORMANCE
 
-El repositorio ya incluye `.github/workflows/deploy.yml`.
+### PERFORMANCE
 
-1. Crea un repositorio en GitHub y sube estos archivos a la rama `main`.
-2. En **Settings → Pages**, selecciona **GitHub Actions** como fuente.
-3. Haz push a `main`.
-4. El workflow ejecutará `npm install`, build y despliegue.
+Instrumento reducido para interpretación en vivo.
 
-`vite.config.js` usa `base: './'` para que los assets sean relativos y el mismo build funcione bajo una ruta de proyecto de GitHub Pages.
+- `1` Bruma
+- `2` Ascenso
+- `3` Cresta
+- `4` Ruptura
+- `Espacio` Avalancha temporal
+- `Puntero` Mover cumbre/atractor
+- `R` Reset
+- `P` Volver a LAB
 
-## Archivos que debes entender primero
+## Fuerza propia: contornos
 
-1. `src/main.js`: escena, cámara, renderer, loop, interacción y modos.
-2. `src/simulation/parameters.js`: parámetros/uniforms accesibles desde CPU.
-3. `src/simulation/createSimulation.js`: estado GPU, fuerzas, integración y render.
-4. `src/ui/labPanel.js`: controles del laboratorio y escenarios de exploración.
+La propuesta añade una fuerza radial oscilante:
 
-Lee la `GUIA_ESTUDIANTE.md` para comprender la estructura del proyecto y 
-cómo se relacionan los archivos.
+```text
+F_contorno = r̂ · sin(d · f) · k
+```
 
-## Documentación complementaria
+Esto crea bandas concéntricas que alternan el sentido de la fuerza según la distancia al atractor. Los parámetros están definidos en `src/simulation/parameters.js` y la ecuación vive en `src/simulation/createSimulation.js`.
 
+## Arquitectura
+
+```text
+src/
+├── main.js
+├── simulation/
+│   ├── createSimulation.js
+│   └── parameters.js
+└── ui/
+    ├── labPanel.js
+    └── performanceHud.js
+```
+
+- `main.js`: escena, cámara, interacción y score.
+- `parameters.js`: uniforms modificables desde CPU.
+- `createSimulation.js`: buffers, fuerzas, integración y render.
+- `labPanel.js`: interfaz de laboratorio.
+- `performanceHud.js`: interfaz mínima de interpretación.
+
+## Despliegue
+
+El workflow de GitHub Pages está en la raíz del repositorio general:
+
+```text
+.github/workflows/deploy-unidad3.yml
+```
+
+Al hacer push a `main`, GitHub Actions ejecuta `npm ci`, `npm run build` y publica `dist/`.
+
+## Documentación de la unidad
+
+- [Reto de diseño](../RetoDiseño.md)
+- [Evidencias](../Evidencias.md)
 - [Guía del estudiante](GUIA_ESTUDIANTE.md)
-- [Validación y depuración](PRUEBAS_Y_DEPURACION.md)
+- [Pruebas y depuración](PRUEBAS_Y_DEPURACION.md)
