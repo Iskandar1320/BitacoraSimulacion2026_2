@@ -265,6 +265,6 @@ La lista y el formato sugerido están en [Evidencias.md](./Evidencias.md).
 | **Experimentación y criterio frente a la IA** | 10 | alternativas descartadas, decisiones conservadas y lista de cambios hechos con IA | documentado | 6 |
 | **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | ready | 5 |
 
-    --- nota: 86 -> de 0 a 5--> 4.3
-    ---
+    nota: 86 -> de 0 a 5--> 4.3
+    
 
