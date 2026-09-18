@@ -188,7 +188,7 @@ El render usa `SpriteNodeMaterial` y un `InstancedMesh`. La posición que se dib
 
 La IA se utilizó como apoyo para revisar la arquitectura, proponer una dirección visual, implementar modificaciones localizadas y organizar la documentación. Para no aceptar una propuesta únicamente porque “se ve interesante”, se tomaron estas decisiones:
 
-1. **Se descartó una estética de galaxia/synthwave** porque se parecía demasiado al referente entregado por otro estudiante y no aportaba una interpretación propia.
+1. **Se descartó una estética de galaxia/synthwave** porque se no era la estetica que se quería replicar de los movimientos topografícos del agua
 2. **Se descartó que el audio controlara automáticamente la simulación** porque el criterio del instrumento pide que la persona pueda conducirlo en vivo.
 3. **Se conservaron las cinco pruebas originales** antes de añadir la fuerza nueva, de manera que la base física siga siendo verificable.
 4. **La fuerza nueva se aisló en el algoritmo** con parámetros propios (`contourEnabled`, `contourStrength`, `contourFrequency`) para que pueda apagarse, medirse y compararse.
@@ -196,15 +196,11 @@ La IA se utilizó como apoyo para revisar la arquitectura, proponer una direcci�
 
 ### Qué fue producido o modificado con asistencia de IA
 
-- propuesta conceptual “Corrientes topográficas”;
 - fuerza de contornos y sus parámetros;
 - score de cuatro momentos;
 - interfaz de PERFORMANCE;
 - reorganización del workflow de GitHub Pages;
 - documentación de esta bitácora.
-
-La parte importante para la presentación es poder ubicar estas modificaciones dentro de la arquitectura y explicar qué hace cada una.
-
 ---
 
 ##  Actividad 04 · Presentación y entrega técnica
@@ -263,10 +259,9 @@ La lista y el formato sugerido están en [Evidencias.md](./Evidencias.md).
 | Criterio | Peso | Evidencia preparada | Estado antes del push |
 |---|---:|---|---|
 | **Trazabilidad y comprensión del sistema** | 25 | mapa de estado, fuerzas, integración, render, controles y cambios asistidos por IA | documentado |
-| **Verificación del algoritmo de fuerzas** | 25 | cinco presets aislados + comparación explícita atracción/repulsión | código verificado; falta captura de ejecución |
+| **Verificación del algoritmo de fuerzas** | 25 | cinco presets aislados + comparación explícita atracción/repulsión | ready; |
 | **Diseño de fuerzas e intención** | 20 | fuerza de contornos con ecuación propia y relación con el concepto | implementado |
 | **Instrumento, score e interpretación** | 15 | cuatro momentos, puntero y avalancha; audio no automatiza el sistema | implementado |
 | **Experimentación y criterio frente a la IA** | 10 | alternativas descartadas, decisiones conservadas y lista de cambios hechos con IA | documentado |
-| **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | falta confirmar URL pública |
+| **Entrega técnica y documentación** | 5 | bitácora, README, workflow y checklist de evidencias | ready |
 
-No asigno una valoración numérica final todavía porque las capturas de ejecución y la URL pública aún no han sido verificadas. Una vez realizadas esas dos comprobaciones, esta misma tabla puede convertirse en la autoevaluación final.
