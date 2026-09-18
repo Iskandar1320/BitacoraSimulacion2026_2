@@ -12,7 +12,7 @@ El propósito de esta unidad es construir y comprender un sistema dinámico de p
 
 ---
 
-## 📌 Actividad 01 · Referentes y modelo mental
+## Actividad 01 · Referentes y modelo mental
 
 ### ¿Qué parte es el sistema?
 
@@ -51,7 +51,7 @@ Los referentes se usan para observar cómo un sistema de partículas puede produ
 
 ---
 
-## 📌 Actividad 02 · Laboratorio de fuerzas
+##  Actividad 02 · Laboratorio de fuerzas
 
 Antes de diseñar la interpretación se conservaron las cinco pruebas del proyecto base. El objetivo es poder predecir el comportamiento antes de mirar la imagen.
 
@@ -71,7 +71,7 @@ La comparación más clara se realiza entre las pruebas **3 · Atracción** y **
 
 ---
 
-## 📌 Actividad 03 · Encargo de diseño
+##  Actividad 03 · Encargo de diseño
 
 ### Pieza musical
 
@@ -207,7 +207,7 @@ La parte importante para la presentación es poder ubicar estas modificaciones d
 
 ---
 
-## 📌 Actividad 04 · Presentación y entrega técnica
+##  Actividad 04 · Presentación y entrega técnica
 
 ### Ejecución local
 
@@ -220,7 +220,7 @@ npm run dev
 ### Build
 
 ```bash
-npm run build
+npm run buildhttp://localhost:5173/
 npm run preview
 ```
 
