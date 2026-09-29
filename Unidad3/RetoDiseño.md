@@ -67,8 +67,6 @@ Antes de diseñar la interpretación se conservaron las cinco pruebas del proyec
 
 La comparación más clara se realiza entre las pruebas **3 · Atracción** y **4 · Repulsión**. No cambia la arquitectura ni la posición del atractor; solo cambia el signo de `radialStrength` de positivo a negativo. Esta modificación es útil porque permite verificar que el signo del parámetro tiene una consecuencia física observable y explicable.
 
-> **Evidencia pendiente de captura:** al ejecutar la versión final en el navegador, registrar una captura o GIF corto de las cinco pruebas. La verificación anterior corresponde a la lectura del algoritmo; la evidencia visual debe añadirse después de ejecutar el sistema.
-
 ---
 
 ##  Actividad 03 · Encargo de diseño
