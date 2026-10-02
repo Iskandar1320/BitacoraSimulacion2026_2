@@ -1,8 +1,14 @@
 # 🌊 Unidad 3 · Fuerzas — Corrientes topográficas
 
 **Texto guía:** Capítulo 2 — Vectores de *The Nature of Code*
+
 **Herramienta de desarrollo:** Three.js / JavaScript / WebGPU
+
 **Caso de estudio:** [forces-instrument-u3](https://github.com/juanferfranco/forces-instrument-u3)
+
+**Pieza musical** [LesAlpx](https://music.youtube.com/watch?v=iuTk8x410mk)
+
+**Pagina** [FuerzasCorrientes Topograficas](https://iskandar1320.github.io/BitacoraSimulacion2026_2/)
 
 El propósito de esta unidad es construir y comprender un sistema dinámico de partículas que pueda ser interpretado en tiempo real. La obra no sigue trayectorias dibujadas previamente: el comportamiento aparece de la combinación entre estado, fuerzas, integración y decisiones del intérprete.
 
@@ -70,10 +76,6 @@ La comparación más clara se realiza entre las pruebas **3 · Atracción** y **
 ---
 
 ##  Actividad 03 · Encargo de diseño
-
-### Pieza musical
-
-[LesAlpx](https://music.youtube.com/watch?v=iuTk8x410mk)
 
 ### Concepto — “Corrientes topográficas”
 
