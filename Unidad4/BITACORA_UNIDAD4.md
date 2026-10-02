@@ -1,4 +1,8 @@
-# Bitácora breve — Unidad 4 · Oscilación
+# Bitácora — Unidad 4 · Oscilación
+
+### Proyecto P5 
+            
+    [kURAMOto](https://editor.p5js.org/Alex1320/full/Eu5-cb1vD)
 
 ## Concepto
 
@@ -110,3 +114,5 @@ En este proyecto cada agente tiene una fase y una frecuencia propias. La sincron
 | Explicación del comportamiento observado | 20/25 | pruebas y parámetro de orden |
 | Cumplimiento de objetivos de la unidad | 20/25 | instrumento performativo y demostración en vivo |
 | **Total** | **83/100** | |
+
+    nota de 0 a 5 -> 4.15
